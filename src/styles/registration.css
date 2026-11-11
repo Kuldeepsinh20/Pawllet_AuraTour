@@ -1,0 +1,240 @@
+.video_player {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .video_player {
+    object-position: center 35%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .video_player {
+    object-position: center 30%;
+  }
+}
+
+.reg-cards_grid {
+  width: 100%;
+  max-width: min(100%, 69.875rem);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  gap: clamp(1rem, 2.2vw, 2rem);
+  pointer-events: auto;
+  perspective: 60rem;
+}
+
+.reg-card {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(11.5rem, 22vh, 15rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.75rem);
+  border-radius: var(--border-radius--medium);
+  background: linear-gradient(160deg, rgba(21, 21, 21, 0.9) 0%, rgba(36, 36, 36, 0.84) 100%);
+  border: 1px solid rgba(232, 223, 201, 0.18);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(245, 241, 232, 0.08);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  will-change: transform;
+  transition: border-color var(--duration-fast, 0.3s) var(--ease-smooth, ease),
+    box-shadow var(--duration-fast, 0.3s) var(--ease-smooth, ease);
+}
+
+.reg-card::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle 14rem at var(--card-glow-x, 50%) var(--card-glow-y, 50%),
+    rgba(245, 241, 232, 0.12),
+    rgba(197, 31, 53, 0.08) 45%,
+    transparent 75%
+  );
+  transition: opacity var(--duration-fast, 0.3s) var(--ease-smooth, ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .reg-card:hover {
+    border-color: rgba(232, 223, 201, 0.42);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.72), 0 0 28px rgba(197, 31, 53, 0.25),
+      inset 0 1px 0 rgba(245, 241, 232, 0.18);
+  }
+
+  .reg-card:hover::after {
+    opacity: 1;
+  }
+}
+
+.reg-card_title {
+  position: relative;
+  z-index: 1;
+  margin: 0px;
+  max-width: 100%;
+  font-family: var(--_typography---fonts--heading-font);
+  font-size: clamp(1.35rem, 2.5vw, var(--_typography---heading-size--medium));
+  line-height: var(--_typography---line-height--heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #F5F1E8;
+  letter-spacing: 0.04em;
+  overflow-wrap: break-word;
+}
+
+/* Tablets (768px–1024px) */
+@media screen and (max-width: 1024px) {
+  .reg-cards_grid {
+    gap: clamp(0.875rem, 2vw, 1.5rem);
+  }
+
+  .reg-card {
+    min-height: clamp(10.5rem, 20vh, 13.5rem);
+    padding: clamp(1.35rem, 2.5vw, 2rem) clamp(0.875rem, 1.8vw, 1.35rem);
+  }
+
+  .reg-card_title {
+    font-size: clamp(1.3rem, 2.8vw, 2.15rem);
+  }
+
+  #registration-page .video_content {
+    padding-top: calc(var(--padding-navbar--regular) + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(var(--padding-navbar--regular) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Large Phones & Mobile Portrait (<= 767px) */
+@media screen and (max-width: 767px) {
+  .reg-cards_grid {
+    grid-template-columns: minmax(0px, 1fr);
+    max-width: 34rem;
+    gap: var(--gap-spacing--small);
+  }
+
+  .reg-card {
+    min-height: clamp(6.75rem, 15svh, 9rem);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .reg-card_title {
+    font-size: clamp(1.35rem, 5.5vw, 2rem);
+  }
+
+  #registration-page .video_content {
+    padding-top: calc(max(var(--padding-navbar--regular), 5.5rem) + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(max(var(--padding-navbar--regular), 5.75rem) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Mobile Portrait (320px–480px) */
+@media screen and (max-width: 480px) {
+  .reg-card {
+    min-height: clamp(6rem, 14svh, 8rem);
+    padding: 1.25rem 1rem;
+  }
+
+  .reg-card_title {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+}
+
+/* Landscape Phones / Short Screens */
+@media screen and (min-width: 560px) and (max-width: 920px) and (max-height: 540px) and (orientation: landscape) {
+  .reg-cards_grid {
+    grid-template-columns: repeat(3, minmax(0px, 1fr));
+    max-width: 100%;
+    gap: 0.875rem;
+  }
+
+  .reg-card {
+    min-height: clamp(6rem, 30svh, 9.5rem);
+    padding: 1.15rem 0.75rem;
+  }
+
+  .reg-card_title {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+  }
+
+  #registration-page .video_content {
+    padding-top: calc(4.75rem + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Registration Page — Remove Background Overlays */
+#registration-page .video_overlay,
+#registration-page .shutter_shade {
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#registration-page::before,
+#registration-page::after,
+#registration-page .video_screen::before,
+#registration-page .video_screen::after,
+#registration-page .video_frame::before,
+#registration-page .video_frame::after {
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+#registration-page .video_frame {
+  background: transparent none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#registration-page .video_player {
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  object-fit: cover;
+}
+
+/* Preserve full-viewport standalone route rendering on /registration without shutter offset */
+html.w-mod-js:not(.wf-design-mode) section#registration-page {
+  --shutter-pin: 0;
+  min-height: 100svh;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  scroll-margin-top: 0px;
+  pointer-events: auto;
+}
+
+html.w-mod-js:not(.wf-design-mode) section#registration-page > .video_screen {
+  position: relative;
+  height: auto;
+  min-height: 100svh;
+  padding-bottom: 0px;
+  clip-path: none !important;
+}
+
+html.w-mod-js:not(.wf-design-mode) section#registration-page [data-shutter-scroll-text] {
+  transform: none;
+}
+
+html.w-mod-js:not(.wf-design-mode) section#registration-page [data-bg-video] > :is(img, video) {
+  top: 0px;
+  height: 100%;
+  transform: none;
+}

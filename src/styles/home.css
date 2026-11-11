@@ -1,0 +1,245 @@
+.hero_overlay {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, rgba(8, 8, 8, 0.32) 0%, rgba(8, 8, 8, 0.05) 38%, rgba(8, 8, 8, 0.15) 62%, rgba(8, 8, 8, 0.82) 100%);
+}
+
+@media screen and (max-width: 479px) {
+  .pawllet_letter-text {
+    font-size: 1.35rem;
+  }
+}
+
+.hero_video {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0px;
+  display: block;
+}
+
+.bg-video_media {
+  opacity: 0;
+  transition: opacity var(--duration-base, 0.6s) var(--ease-smooth, cubic-bezier(0.5, 0, 0.5, 1));
+}
+
+.bg-video_media.is-ready {
+  opacity: 1;
+}
+
+.hero_overlay {
+  background-color: rgba(8, 8, 8, 0.18);
+  background-image: linear-gradient(180deg, rgba(8, 8, 8, 0.35) 0%, rgba(8, 8, 8, 0.05) 35%, rgba(8, 8, 8, 0.05) 75%, rgba(8, 8, 8, 0.45) 100%);
+}
+
+@media screen and (max-width: 991px) {
+  .hero_video {
+    object-position: center 35%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hero_video {
+    object-position: center 30%;
+  }
+}
+
+.hero_stage-text {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  padding: calc(clamp(5.25rem, 10svh, 6.5rem) + env(safe-area-inset-top, 0px))
+    clamp(1rem, 4vw, 3rem)
+    calc(clamp(2.25rem, 6svh, 4rem) + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero_brand-title {
+  display: block;
+  margin: 0px;
+  max-width: 100%;
+  font-family: 'Grenze Gotisch', 'Recoleta', Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(1.35rem, 3.2vw, 2.9rem);
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F5F1E8;
+  text-shadow: 0 2px 16px rgba(8, 8, 8, 0.92), 0 0 26px rgba(197, 31, 53, 0.45);
+  pointer-events: auto;
+  overflow-wrap: break-word;
+}
+
+.hero_bottom-headline {
+  margin: 0px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  font-family: 'Grenze Gotisch', 'Recoleta', Georgia, serif;
+  text-align: center;
+}
+
+.hero_headline-lead {
+  display: block;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.2vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  color: #E8DFC9;
+  text-shadow: 0 2px 14px rgba(8, 8, 8, 0.95);
+}
+
+.hero_headline-main {
+  display: block;
+  font-weight: 900;
+  font-size: clamp(2.85rem, 7.6vw, 6.25rem);
+  line-height: 0.92;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #F5F1E8;
+  text-shadow: 0 4px 26px rgba(8, 8, 8, 0.95), 0 0 34px rgba(197, 31, 53, 0.52);
+}
+
+/* Tablets (768px–1024px) */
+@media screen and (max-width: 1024px) {
+  .hero_stage-text {
+    padding: calc(6rem + env(safe-area-inset-top, 0px)) 1.5rem calc(3.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero_brand-title {
+    font-size: clamp(1.3rem, 3.8vw, 2.25rem);
+    letter-spacing: 0.06em;
+  }
+
+  .hero_headline-main {
+    font-size: clamp(2.6rem, 8.8vw, 4.75rem);
+  }
+}
+
+/* Large Phones (481px–767px) */
+@media screen and (max-width: 767px) {
+  .hero_stage-text {
+    padding: calc(5.5rem + env(safe-area-inset-top, 0px)) 1.25rem calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero_brand-title {
+    font-size: clamp(1.2rem, 4.4vw, 1.85rem);
+  }
+
+  .hero_headline-lead {
+    font-size: clamp(1.05rem, 3.6vw, 1.5rem);
+  }
+
+  .hero_headline-main {
+    font-size: clamp(2.45rem, 10.5vw, 3.85rem);
+  }
+}
+
+/* Mobile Portrait (320px–480px) */
+@media screen and (max-width: 480px) {
+  .hero_stage-text {
+    padding: calc(5.5rem + env(safe-area-inset-top, 0px)) 1rem calc(5.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero_brand-title {
+    font-size: clamp(1.05rem, 4.8vw, 1.5rem);
+    letter-spacing: 0.05em;
+  }
+
+  .hero_headline-lead {
+    font-size: clamp(0.95rem, 4vw, 1.3rem);
+    letter-spacing: 0.09em;
+  }
+
+  .hero_headline-main {
+    font-size: clamp(2.1rem, 11.5vw, 3.25rem);
+  }
+}
+
+/* Short Landscape Screens (e.g., phones rotated sideways) */
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .hero_stage-text {
+    padding: calc(4.25rem + env(safe-area-inset-top, 0px))
+      calc(1.25rem + env(safe-area-inset-left, 0px))
+      calc(1.5rem + env(safe-area-inset-bottom, 0px))
+      calc(1.25rem + env(safe-area-inset-right, 0px));
+  }
+
+  .hero_brand-title {
+    font-size: clamp(1.05rem, 4.2svh, 1.65rem);
+  }
+
+  .hero_headline-lead {
+    font-size: clamp(0.95rem, 4svh, 1.25rem);
+  }
+
+  .hero_headline-main {
+    font-size: clamp(1.95rem, 11svh, 3.1rem);
+  }
+}
+
+/* Folded polygon page-to-page curtain transition */
+.route-curtain {
+  position: fixed;
+  inset: 0px;
+  z-index: 200;
+  display: none;
+  pointer-events: auto;
+  will-change: clip-path;
+  background-image:
+    radial-gradient(55% 45% at 50% 45%, rgba(197, 31, 53, 0.34) 0%, rgba(197, 31, 53, 0) 75%),
+    linear-gradient(180deg, #151515 0%, #080808 65%, #1c070b 100%);
+}
+
+.route-curtain_emblem {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(9rem, 18svh);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.78), 0 0 32px rgba(197, 31, 53, 0.45);
+  border: 1px solid rgba(245, 241, 232, 0.22);
+}
+
+.route-curtain_logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.48);
+  display: block;
+}
+
+/* Preserve full-viewport standalone route rendering on / without shutter offset */
+html.w-mod-js:not(.wf-design-mode) section#home.section_hero {
+  --shutter-pin: 0;
+  min-height: 100svh;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  scroll-margin-top: 0px;
+  pointer-events: auto;
+}
+
+html.w-mod-js:not(.wf-design-mode) section#home.section_hero > .hero_screen {
+  position: relative;
+  height: 100svh;
+  min-height: 100svh;
+  padding-bottom: 0px;
+  clip-path: none !important;
+}
+
+html.w-mod-js:not(.wf-design-mode) section#home.section_hero [data-shutter-scroll-text] {
+  transform: none;
+}
