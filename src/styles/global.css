@@ -3406,6 +3406,7 @@ figure {
   display: flex;
 }
 
+
 .navbar_menu {
   padding: var(--gap-spacing--xxsmall)1.25rem var(--gap-spacing--xxsmall)var(--gap-spacing--xxsmall);
   column-gap: var(--gap-spacing--xsmall);
@@ -5736,7 +5737,9 @@ figure {
     order: 1;
   }
 
-  .navbar_menu {
+  
+
+.navbar_menu {
     padding-right: var(--gap-spacing--xxsmall);
     flex-direction: row-reverse;
     justify-content: center;
@@ -6270,7 +6273,9 @@ figure {
 
 
 
-  .navbar_menu {
+  
+
+.navbar_menu {
     padding-right: var(--gap-spacing--xxsmall);
     padding-left: var(--gap-spacing--xxsmall);
     gap: 0rem;
@@ -10127,6 +10132,8 @@ body,
   }
 }
 
+
+
 .navbar_menu {
   background-color: #C51F35;
   color: #F5F1E8;
@@ -10170,7 +10177,9 @@ body,
 }
 
 @media screen and (max-width: 480px) {
-  .navbar_menu {
+  
+
+.navbar_menu {
     background-color: #C51F35;
     padding-right: var(--gap-spacing--xxsmall);
     padding-left: var(--gap-spacing--xxsmall);

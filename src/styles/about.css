@@ -307,12 +307,173 @@
   padding-bottom: 0.5rem;
   color: #F5F1E8;
   opacity: 1;
-  cursor: default;
-  pointer-events: auto;
+  text-decoration: none;
   translate: none !important;
   transform: none !important;
   transition: none !important;
   animation: none !important;
+}
+
+#about .footer_bottom .footer_credits-link {
+  cursor: pointer;
+}
+
+#about .footer_bottom .footer_legal-btn {
+  background: none;
+  border: 0px;
+  font: inherit;
+  cursor: pointer;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* Legal Modal Popup */
+.legal-modal_backdrop {
+  position: fixed;
+  inset: 0px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(1rem, env(safe-area-inset-top, 0px))
+    max(1rem, env(safe-area-inset-right, 0px))
+    max(1rem, env(safe-area-inset-bottom, 0px))
+    max(1rem, env(safe-area-inset-left, 0px));
+  background: rgba(8, 8, 8, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.legal-modal_dialog {
+  position: relative;
+  width: min(100%, 48rem);
+  max-height: min(86svh, 46rem);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius--medium);
+  background: linear-gradient(170deg, #161618 0%, #0a0a0c 100%);
+  border: 1px solid rgba(232, 223, 201, 0.26);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(245, 241, 232, 0.14);
+  color: #F5F1E8;
+  overflow: hidden;
+}
+
+.legal-modal_header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1.15rem, 3vw, 1.75rem);
+  border-bottom: 1px solid rgba(245, 241, 232, 0.16);
+}
+
+.legal-modal_heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.legal-modal_eyebrow {
+  font-family: var(--_typography---fonts--primary-font);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E02840;
+}
+
+.legal-modal_title {
+  margin: 0px;
+  font-family: var(--_typography---fonts--heading-font);
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #E02840;
+}
+
+.legal-modal_close {
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 241, 232, 0.24);
+  background: rgba(245, 241, 232, 0.08);
+  color: #F5F1E8;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.legal-modal_close:hover,
+.legal-modal_close:focus-visible {
+  background: #C51F35;
+  border-color: rgba(245, 241, 232, 0.45);
+}
+
+.legal-modal_body {
+  position: relative;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem) clamp(1.15rem, 3vw, 1.75rem) clamp(1.5rem, 3vw, 2rem);
+  font-family: var(--_typography---fonts--primary-font);
+  font-size: clamp(0.9rem, 1.15vw, 0.98rem);
+  line-height: 1.6;
+  color: #E8DFC9;
+}
+
+.legal-modal_doc-subtitle,
+.legal-modal_doc-campaign,
+.legal-modal_doc-meta {
+  margin: 0px 0px 0.4rem;
+  font-weight: 600;
+  color: #F5F1E8;
+}
+
+.legal-modal_doc-meta {
+  margin-bottom: 0.9rem;
+  color: rgba(232, 223, 201, 0.78);
+  font-weight: 500;
+}
+
+.legal-modal_section {
+  margin-top: 1.35rem;
+}
+
+.legal-modal_section-heading {
+  margin: 0px 0px 0.55rem;
+  font-family: var(--_typography---fonts--heading-font);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #E02840;
+}
+
+.legal-modal_subheading {
+  margin: 0.9rem 0px 0.35rem;
+  font-family: var(--_typography---fonts--primary-font);
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #F5F1E8;
+}
+
+.legal-modal_paragraph {
+  margin: 0px 0px 0.65rem;
+}
+
+.legal-modal_list {
+  margin: 0px 0px 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.legal-modal_list li {
+  margin-bottom: 0.3rem;
 }
 
 /* Tablets & Small Laptops (768px–1024px) */
