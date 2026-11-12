@@ -20,6 +20,37 @@
   }
 }
 
+#registration-page .video_content {
+  padding-top: calc(clamp(4.5rem, 8svh, 5.75rem) + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(clamp(4.5rem, 8svh, 6.25rem) + env(safe-area-inset-bottom, 0px));
+}
+
+.reg_hero-heading {
+  margin-top: calc(-1 * clamp(0.25rem, 1.5vh, 0.85rem));
+  margin-bottom: clamp(0.75rem, 2.2vh, 1.5rem);
+  pointer-events: auto;
+}
+
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .reg_hero-heading .hero_headline-lead {
+    font-size: clamp(0.9rem, 3.8svh, 1.25rem);
+  }
+
+  .reg_hero-heading .hero_headline-main {
+    font-size: clamp(1.85rem, 9.5svh, 2.85rem);
+  }
+}
+
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .reg_hero-heading .hero_headline-lead {
+    font-size: clamp(0.9rem, 3.8svh, 1.25rem);
+  }
+
+  .reg_hero-heading .hero_headline-main {
+    font-size: clamp(1.85rem, 9.5svh, 2.85rem);
+  }
+}
+
 .reg-cards_grid {
   width: 100%;
   max-width: min(100%, 69.875rem);
@@ -94,9 +125,94 @@
   overflow-wrap: break-word;
 }
 
+.reg-card--has-action {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.reg-card_body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.reg-card_desc {
+  margin: 0px;
+  max-width: 24ch;
+  font-family: var(--_typography---fonts--primary-font);
+  font-size: clamp(0.875rem, 1.05vw, 0.975rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: #E8DFC9;
+}
+
+.reg-card_view-btn {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  min-height: 44px;
+  padding: 0.7rem 1.35rem;
+  background-color: #C51F35;
+  color: #F5F1E8;
+  --button-lit-from: #A31629;
+  --button-lit-to: #E02840;
+  --button-lit-ink: #F5F1E8;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55), 0 0 14px rgba(197, 31, 53, 0.35),
+    inset 0 0 0 1px rgba(245, 241, 232, 0.22);
+}
+
+.giveaway-modal_tagline {
+  color: #F5F1E8;
+  font-size: 1.02rem;
+}
+
+.giveaway-modal_rules-list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.giveaway-modal_rule-item {
+  line-height: 1.6;
+}
+
+.giveaway-modal_rule-num {
+  font-family: var(--_typography---fonts--heading-font);
+  font-weight: 800;
+  color: #E02840;
+}
+
+.giveaway-modal_note {
+  margin-top: 1.35rem;
+  margin-bottom: 0px;
+}
+
+.giveaway-modal_note-label {
+  font-weight: 800;
+  color: #E02840;
+}
+
 /* Tablets (768px–1024px) */
 @media screen and (max-width: 1024px) {
-  .reg-cards_grid {
+  @media screen and (max-height: 540px) and (orientation: landscape) {
+  .reg_hero-heading .hero_headline-lead {
+    font-size: clamp(0.9rem, 3.8svh, 1.25rem);
+  }
+
+  .reg_hero-heading .hero_headline-main {
+    font-size: clamp(1.85rem, 9.5svh, 2.85rem);
+  }
+}
+
+.reg-cards_grid {
     gap: clamp(0.875rem, 2vw, 1.5rem);
   }
 
@@ -117,7 +233,17 @@
 
 /* Large Phones & Mobile Portrait (<= 767px) */
 @media screen and (max-width: 767px) {
-  .reg-cards_grid {
+  @media screen and (max-height: 540px) and (orientation: landscape) {
+  .reg_hero-heading .hero_headline-lead {
+    font-size: clamp(0.9rem, 3.8svh, 1.25rem);
+  }
+
+  .reg_hero-heading .hero_headline-main {
+    font-size: clamp(1.85rem, 9.5svh, 2.85rem);
+  }
+}
+
+.reg-cards_grid {
     grid-template-columns: minmax(0px, 1fr);
     max-width: 34rem;
     gap: var(--gap-spacing--small);
@@ -152,7 +278,17 @@
 
 /* Landscape Phones / Short Screens */
 @media screen and (min-width: 560px) and (max-width: 920px) and (max-height: 540px) and (orientation: landscape) {
-  .reg-cards_grid {
+  @media screen and (max-height: 540px) and (orientation: landscape) {
+  .reg_hero-heading .hero_headline-lead {
+    font-size: clamp(0.9rem, 3.8svh, 1.25rem);
+  }
+
+  .reg_hero-heading .hero_headline-main {
+    font-size: clamp(1.85rem, 9.5svh, 2.85rem);
+  }
+}
+
+.reg-cards_grid {
     grid-template-columns: repeat(3, minmax(0px, 1fr));
     max-width: 100%;
     gap: 0.875rem;

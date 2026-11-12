@@ -22,6 +22,45 @@ function LegalButton({ label, onClick }) {
   );
 }
 
+function InstagramLink({ href, label, ariaLabel }) {
+  const linkRef = useRef(null);
+  useButtonMotion(linkRef);
+
+  return (
+    <a
+      ref={linkRef}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ariaLabel}
+      data-button-status="ready"
+      className="footer_instagram-link w-inline-block"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+        className="footer_instagram-icon"
+      >
+        <rect
+          x="2.75"
+          y="2.75"
+          width="18.5"
+          height="18.5"
+          rx="5.25"
+          stroke="currentColor"
+          strokeWidth="1.75"
+        />
+        <circle cx="12" cy="12" r="4.25" stroke="currentColor" strokeWidth="1.75" />
+        <circle cx="17.25" cy="6.75" r="1.15" fill="currentColor" />
+      </svg>
+      <span className="text-size-small text-weight-semibold text-style-allcaps is-legal">
+        {label}
+      </span>
+    </a>
+  );
+}
+
 function LegalModal({ activeDoc, onClose }) {
   const bodyRef = useRef(null);
   const closeBtnRef = useRef(null);
@@ -167,6 +206,19 @@ export default function BottomBar() {
               Web credits
             </div>
           </a>
+        </div>
+
+        <div className="footer_socials footer_instagram-group">
+          <InstagramLink
+            href="https://www.instagram.com/pawllet.tech?exln=M2x5bjVsdzI0bjQ%3D&utm_source=qr"
+            label="PAWLLET"
+            ariaLabel="PAWLLET Instagram"
+          />
+          <InstagramLink
+            href="https://www.instagram.com/buzzbrigade?rpxt=aGdmdWxpbm00ZHgy"
+            label="BUZZ BRIGADE"
+            ariaLabel="BUZZ BRIGADE Instagram"
+          />
         </div>
 
         <div className="footer_legal">
