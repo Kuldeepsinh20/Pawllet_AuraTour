@@ -214,11 +214,6 @@ export default function BottomBar() {
             label="PAWLLET"
             ariaLabel="PAWLLET Instagram"
           />
-          <InstagramLink
-            href="https://www.instagram.com/buzzbrigade?rpxt=aGdmdWxpbm00ZHgy"
-            label="BUZZ BRIGADE"
-            ariaLabel="BUZZ BRIGADE Instagram"
-          />
         </div>
 
         <div className="footer_legal">
